@@ -9,19 +9,19 @@
             <thead>
                 <tr>
                     <th>id</th>
-                    <th>タイトル</th>
+                    <th>ステータス</th>
                     <th>タスク</th>
                 </tr>
             </thead>
-            
             <tbody>
                 
                 @foreach ($tasks as $tasks)
                 <tr>
                     <td>{!! link_to_route('tasks.show', $tasks->id, ['id' => $tasks->id]) !!}</td>
-                    <td>{{ $tasks->title }}</td>
+                    <td>{{ $tasks->status }}</td>
                     <td>{{ $tasks->content }}</td>
                 </tr>
+                
                 @endforeach
             </tbody>
         </table>
