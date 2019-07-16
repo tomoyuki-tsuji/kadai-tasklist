@@ -5,7 +5,7 @@
     @if(Auth::check())
         
         @include('tasks.tasks', ['tasks' => $tasks])
-        
+        {{ Auth::user()->name }}
     @else
         <div class="center jumbotron">
             <div class="text-center">
