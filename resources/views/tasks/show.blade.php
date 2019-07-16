@@ -2,28 +2,27 @@
 
 @section('content')
 
-<h1>id = {{ $tasks->id }} のタスク詳細ページ</h1>
+<h1>id = {{ $task->id }} のタスク詳細ページ</h1>
 
     <table class="table table-bordered">
         <tr>
             <th>id</th>
-            <td>{{ $tasks->id }}</td>
+            <td>{{ $task->id }}</td>
         </tr>
         <tr>
             <th>ステータス</th>
-            <td>{{ $tasks->status }}</td>
+            <td>{{ $task->status }}</td>
         </tr>
         <tr>
             <th>タスク</th>
-            <td>{{ $tasks->content }}</td>
+            <td>{{ $task->content }}</td>
         </tr>
     </table>
     
-    {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $tasks->id], ['class' => 'btn btn-light']) !!}
+    {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn btn-light']) !!}
     
-    {!! Form::model($tasks, ['route' => ['tasks.destroy', $tasks->id], 'method' => 'delete']) !!}
+    {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
-    
     {!! Form::close() !!}
 
 @endsection
